@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+    <!--The purpose of viewport meta tag is to accomodate the website into every device without jeopardising the website content
+        but there is a catch which is, some content of website will be changed or omitted to accomodate small devices like mobile phones, meaning there will be slight changes as viewport drastically changes per device-->
+        <!-- -> width = device-width -- It simply tells the browser match the viewport with the device maximum width
+             -> initial-scale = 1.0  -- it means dont zoom in/ zoom out be neutral with every device and accomodate every device max width with neutral scale 
+             -> initial-scale > 1.0 means zoom in and initial-scale < 1.0 means zoom out
+        -->
+
+
+        <link rel = "stylesheet" href= "style3.css"> 
+ <title>SAGE ACADEMY</title>
+</head>
+<body>
+
+    <header><!-- style = "color : crimson" -->
+         <h1>SAGE ACADEMY</h1>
+    </header>
+
+    <section class = "banner">
+        <img src = "images//academics1.jpg"  alt ="invest in your education" width = 1700  >
+        <div class = "welcome">
+            <h2>Welcome to <br><span>Sage Academy</span></h2>
+        </div>
+    </section>
+
+    <nav class = "main-nav" >
+        <ul>
+            <li><a href = "" class = "join">HOME</a></li>
+           <li><a href = "Login.html" >LOGIN</a></li>
+           <li><a href = "Signup1.html" >SIGN UP</a></li>
+           <li><a href = "about us.html" >ABOUT</a></li>
+           <li><a href = "Contact.html" >CONTACT</a></li>
+            
+    </nav>
+    <main class = "main1">
+        <article>
+            <h2>Your favourite academy, Sage Academy</h2>
+            <p>We all know that knowledge allows individuals to make informed decisions, understand complex concepts, and solve problems. It can also lead to personal growth and career advancement.
+           For societies, knowledge can drive progress and innovation, improve living standards, and promote social and economic development. As Franklin said knowledge is an asset that can 
+               never be taken away and can positively impact an individual's life in various ways and there is a qoute that says "An expect is a man who knows just that much more about his subject
+               than his associates. Most of us are nearer the top than we think. We fail to realize how easy it is, how necessary it is to learn that fraction more". Knowledge is the eye of desire 
+               and can become the pilot of the soul, invest in knowledge with us the sage academy with good quality of education you shall be the best.</p>
+        </article>
+    <!--Putting an image in <li> tag-->
+    <ul class = "images">
+        <li><img src = "images//academics2.jpg"  alt = "academy1"></li>
+        <li><img src = "images//academics5.jpg"  alt = "academy2" height = 416px width = 490px></li>
+
+    </ul>
+ </main>
+<!--Following is the little section for form before the footer for user to join mailing list-->
+ <section class = "joine">
+    <h2>Join Today!</h2>
+    <p>Knowledge is the eye of desire and can become the pilot of the soul, <br>
+       invest in knowledge with us the sage academy. With good quality of education you shall be the best
+    </p>
+
+    <form>
+        <input type = "email" name = "email" placeholder = "Type email & hit enter" required> <!--Sometimes we dont need the submit button, you fill in your details then press enter then it will submit without the use of submit button-->
+    </form>
+ </section>
+ <footer>
+    <p class = "copyright">Copyright 2023 Sage Academy by Oratile Mashaba</p>
+ </footer>
+</body>
+</html>

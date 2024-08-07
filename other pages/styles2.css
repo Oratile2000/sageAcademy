@@ -1,0 +1,67 @@
+/*We can use display property (display: block)  to convert inline element into block level element 
+
+changing span(inline element into block-level element)
+*/
+
+
+/* NB
+-inline element can be inserted/nested inside block element 
+-block-level element cannot be nested inside inline element
+-block level element cannot be nested inside block level element
+
+*/
+/* span{
+    display : block;
+} */
+
+
+/*
+    -MARGIN AND PADDING
+
+        - Margin - allows us to specify the margin or space outside the border of the element(inline or block element)
+        -Padding -  allows us to specify the padding or space inside the border of the element(inline or block element)
+    - Margin on block element will work fine without any problems meaning it will apply every sides of block element border
+    - Margin on inline element will not work very well meaning not all sides of inline element border will be affected by margin
+       (This sides are top side & buttom side), so to avoid this when we want to use margin on all sides of an inline element we must change display : "to" inline-block
+    -Padding works fine on all elements either block element or inline element
+
+*/
+
+
+div{
+ border : 2px solid rgb(88, 156, 196);
+ margin : 20px;
+ padding : 20px;
+}
+
+em{
+    /* border : 3px;   we cannot apply a border to an inline element*/
+    margin : 20;
+    padding : 20px;
+}
+
+/*Why apply inline-block on an inline element ?
+    - Because inline tags that are the same their padding will overlap/collapse when we reduce window size
+    as they will merge and use same padding instead of using separate padding why this happens its
+    because margin applys on left and right side of inline element 
+        - so how can we prevent that?
+            --its by manipulating display and use inline-block for display property 
+            e.g display : inline-block
+
+--Margin - also collapse when 2 block-level elements are following each other
+         - meaning if we use 20px for separate blocks we wont see 40px between this two blocks but 20px instead, caused by collapsed margin 
+         - margin between 2 blocks takes the largest margin of one block if it exist when there is margin collapse
+*/
+span{
+    display : inline-block;
+}
+
+/*
+    --Inline-block --> Enables us to treat an inline element as a block retaining properties of an inline element
+
+*/
+/* 
+span{
+    margin-top :
+    padding-buttom :
+} */

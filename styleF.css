@@ -1,0 +1,251 @@
+/*Working with body*/
+body, ul, li, h1,h2, a{
+    margin : 0;
+    padding : 0;
+    font-family : arial;
+}
+
+body{
+    min-height : 100vh;
+}
+
+/*Working on header*/
+header.header1 {
+    background-color : rgb(101, 106, 110);
+    padding : 20px;
+    text-align : center;
+    position : fixed;
+    width : 100%;
+                 /*With the code that ends here our navigation bar is behind the image we need in front of the image, so for us to accomplish that we need to use the "z-index" to bring it forward thus removing it from the back*/
+     z-index : 1;/* z-index  by default is 0, then z-index > 0 will bring an element forward and z-index <= 0 will put the element behind in this case the navigation bar*/
+     top : 0px;
+     left : 0px;
+
+}
+.header1 h1 {
+    display : inline-block;
+    color : black;
+    border : 8px solid black;
+    padding : 6px 12px; /*6px top and bottom, 12px left and right */
+    border-radius : 20px;
+}
+nav.nav1{
+    
+    background-color : #f4f4f4;
+    padding : 20px;
+    position : sticky;
+    z-index : 1; /*brought my nav forward from behind header*/
+    top : 100px;
+    /* border-radius :20px; */
+      
+}
+nav.nav1 li{
+    display : inline-block;
+    /* width : 25%; */
+    width : 20%;
+    font-size : 20px;
+    top : 100px;
+    /* text-align : center; */
+}
+.nav1 ul{
+    white-space : nowrap;
+    max-width : 1200px;
+    margin :0  auto;
+    
+}
+nav.nav1 li a {
+    text-decoration : none;
+    color : #4b4b4b;
+
+}
+
+/*Working with main LOGIN form*/
+main.main2{
+    /* flex-direction: column; */
+ 
+    min-height : 100vh;
+    z-index : 1; /*Brought my login forward from behind nav and header*/
+    /* top : 200px; */
+    background : url("images//force3.jpg") no-repeat;
+    background-size : cover;
+    background-position : center;
+    padding-bottom : 200px; /*this property gives us control on space between elements we have used so that we can avoid overlap of elements where content of one element overlap to another content 
+                                - So using this property we avoid that by giving enough room for our contents for each element we have used this property*/
+    animation : animateBg 5s linear infinite;
+}
+main.main2 section.password-box{
+ 
+    
+    align-items: center;
+    display : flex; /*enables the element to be moved and aligned without the use of property position */
+    justify-content : center; /*Take the section as whole and move it to the center adlinment, unlike "text-align" property which takes the contents of text and put them on the center*/
+    position : relative; 
+    top : 300px; 
+    
+}
+.password-box{
+    position : relative;
+    display:inline-flex;
+    height : 400px;
+    margin : 2px 500px;
+    padding : 30px 30px;
+    background-color : transparent;
+    /* background-color : #f4f4f4; */
+    justify-content: center;
+    align-items : center;
+    border-radius : 20px;
+    border : 2px solid black;
+    backdrop-filter : blur(30px);
+    
+}
+h2{
+    font-size : 2em;
+    color : rgb(0, 0, 0);
+    text-align : center;
+
+}
+
+.input{
+    position : relative; /**/
+    width : 310px;
+    margin : 50px 0;
+    border : 2px solid black;
+    padding : 20px;
+  
+}
+
+
+.input  label{
+    position : absolute;
+    top :50%;
+    left : 5px;
+    transform : translateY(-50%); /*What is this ?*/
+    font-size : 1em;
+    color : black;
+    pointer-events : none; /*What is this*/
+    transition : .5s;
+    /* transition : top 200ms ease-in,
+    left 200ms ease-in; */
+}
+form.input input:focus ~ .label,
+ form.input input:valid ~ .label
+    {
+    top : -5px; 
+}
+.input .label{
+    color : transparent;
+}
+
+.input input {
+    width : 93%;
+    height : 30px;
+    background : transparent;
+    border :none;
+    outline : none; /*what is this?*/
+    font-size : 1em;
+    color : black;
+    padding:0 35px 0 5px;
+    cursor : pointer;
+}
+.input input:focus{
+    cursor : pointer;
+}
+
+.input ::placeholder{
+    color : black;
+}
+
+button{
+    width : 100%;
+    height : 40px;
+    background : rgb(101, 106, 110);
+    border : none;
+    outline : none;
+    border-radius : 40px;
+    cursor : pointer;
+    font-size : 1em;
+    color : black;
+    font-weight : 500;
+}
+.login{
+    font-size : .9em;
+    color : black;
+    text-align : center;
+    margin : 25px 0 10px;
+}
+
+.login  p a{
+    color :rgb(235, 110, 8);
+    text-decoration :none;
+    font-weight : 600;
+}
+.login  p a:hover{
+        text-decoration : underline;
+}
+.password-box p.header3{
+        text-align : center;
+       font-size : 20px
+}
+footer{
+    /* position : relative; */
+    background-color : rgb(101, 106, 110);
+    color : black;
+    padding : 10px;
+    text-align : center;
+    margin-top : auto;
+}
+
+/*Media starts here*/
+@media screen and (max-width : 960px)
+{
+   .password-box{
+       margin : 2px 100px;
+      
+   
+   }/*We dont need to write those styles above from this rule set as they will be applied, unless if we want to override those styles(properties) in media query */
+   
+}
+
+@media (max-width : 500px){
+    .password-box {
+        width : 100%;
+        height : 100vh;
+        border : none;
+        border-radius : 0;
+    }
+    .input{
+        width : 290px;
+    }
+
+}
+
+
+/*animation*/
+@keyframes animateBg {
+    100% {
+        filter : hue-rotate(360deg);
+    }
+}
+
+
+
+.nav1 li a {
+    position : relative;
+    display : inline-block;
+}
+.nav1 li a::after{
+    content : "";
+    position : absolute;
+    left : 0;
+    bottom : -6px;
+    width : 100%;
+    height : 3px;
+    background : black;
+    border-radius : 40px;
+    transform : scaleX(0);
+    transition : transform .2s;
+}
+
+.nav1 li a:hover::after{
+    transform : scaleX(1)
+}

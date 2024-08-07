@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+    <link rel = "stylesheet" href = "styleS.css">
+    <title>ACADEMY</title>
+</head>
+<body>
+    <header class = "header1"><h1>SAGE ACADEMY</h1></header>
+    
+<nav class = "nav1">
+   <ul>
+    <li><a href="index1.html">HOME</a></li>
+    <li><a href="Login.html">LOGIN</a></li>
+    <li><a href="">SIGNUP</a></li>
+    <li><a href="about us.html">ABOUT</a></li>
+    <li><a href="contact.html">CONTACT</a></li>
+   </ul>
+</nav>
+
+<main class = "main2">
+    <!-- <form action = "">    action tell the browser wat to do when we submit the form (its an attribte used for php and server side ) -->
+  
+  <section class = "signup-box">
+    <form>
+        <header class = "header2"><h2>Sign up</h2></header>
+        <h3>Personal Details : </h3>
+        <div class = "input">
+            <label for="firstname">First name :</label>
+            <input type="text" id="firstname" name="firstname" placeholder = "Firstname" required> 
+        </div>
+        <div class = "input">
+            <label for="lastname">Last name :</label>
+            <input type="text" id="lastname" name="lastname" placeholder = "Lastname" required>
+        </div>    
+        <div class = "input">
+            <label for="email">Email :</label> 
+            <input type="email" id="email" name="email" placeholder = "Email" required>
+        </div>
+        <div class = "input">
+            <label for = "id">ID number : </label>
+            <input type = "number" id = "id" name = "id" placeholder = "ID number">
+        </div>
+     
+     <!--Radio buttons-->
+     <div class="radio">
+        <p>Choose gender</p>
+         <input type="radio" id="option-1" name="gender" value="male"  required>
+         <label for="option-1">Male</label> <br> <!--radio buttons-->
+         <input type="radio" id="option-2" name="gender" value="female" required>
+         <label for="option-2">Female</label> <br><!--Value attribute will be readed by server side(backend) to know which radio button user clicked and that value will be send to server when the form is submitted-->
+         <input type="radio" id="option-3" name="gender" value="other" required>
+         <label for="option-3">Other</label> <br><br> 
+    </div>       
+    <div class = "input">
+         <label for="province">Province :</label>
+         <input type="text" id="province" name="province" placeholder = "Province"   required>
+    </div>
+    <div class = "input">
+         <label for="city/town">Town/City :</label>
+         <input type="text" id="city/town" name="city/town"placeholder = "Town/City"  >
+    </div>
+    <div class = "input">
+         <label for="suburb">Suburb :</label>
+         <input type="text" id="suburb" name="suburb" placeholder = "Suburb" required>
+    </div>
+    <h3>Education : </h3>
+    <div class = "input">
+        <label for = "school">Institution (e.g school/uni): </label>
+        <input type = "text" id = "school" name = "school" placeholder = "Institution (e.g school/university)" required>
+
+    </div>
+    <div class = "input">
+        <label for = "school">Institution name: </label>
+        <input type = "text" id = "school" name = "school" placeholder = "Institution name" required>
+
+    </div>
+    <div class = "input">
+        <label for = "level">Institution level : </label>
+        <input type = "text"  id = "level" name = "school" placeholder = "Institution level">
+    </div>
+    <div class = "input">
+        <label for = ""></label>
+        <input type = "">
+    </div>
+    <h3>Security :</h3>
+    <div class ="input">
+       <label for="password">Password :</label>  <!--html is case sensitive everythin thats need to be matched must be exactly the same like values of attributes '(FOR) in label' and "(id) in input"-->
+       <input type="password" id="password" name="password" placeholder = "Password" required>
+    </div>   
+    <div class = "input">
+       <label for="cpassword">Confirm password :</label>
+       <input type="password" id="cpassword" name="cpassword" placeholder = "Confirm Password" required>
+    </div>
+
+    <div>
+       <label for="question">Security question :</label>
+       <Select class = "select" name="question" id="question" required>   <!--'Select tag' known as select box also known as dropdown used to select a particular value from various values in this question is security questions-->
+            <option class = "opt" value="q1">What color is your Bugatti?</option>
+            <option class = "opt" value="q2">Whats your parent name?</option>
+            <option class = "opt" value="q3">Whats your dog name?</option>
+            <br><br>
+       </Select>
+    </div>
+
+    <div class="input">
+       <label for="answer">Security answer :</label>
+       <input type="text" id="answer" name="answer" placeholder = "Security Answer" required>
+    </div> 
+
+    <div>
+       <label for="bio">Your bio :</label>
+       <br>
+       <textarea class = "textarea" name="bio" id="bio" col="10" row="10" placeholder="About you..."></textarea>   
+    </div>
+
+       <button type = "submit">Register</button>  <!-- <input type="submit" value="SIGN UP"> -->
+       <div class="login"><P>Aleardy have an account? <a href="login.html"> LOGIN</a></P></div>
+   </form>
+  
+ </section>
+
+</main>
+
+
+<footer>
+    <p class = "copyright">Copyright 2023 Sage Academy by Oratile Mashaba</p>
+</footer>
+</body>
+</html>
+<!--Style sheet can be added anywhere in the HTML form but best on the head tag-->
+
+ <!--comment tag section, cannot 
+        use input tag because we might have large comment bigger tha input thus
+    comment tag is most useful in this case for clear view unlike input tag
+    comment tag its not just for commenting but for other things that require 
+    multiple lines of text which is <textarea id="" name="" col="" row="" placeholder=""> tag-->
+
+ <!--The attribute  "Required" is used to force us to fill in the required 
+    value on a particular element-->
+    <!--What happens when we submit the form by sign up the browser take the value inside the action attribute as reference to the server for the particular form submited-->

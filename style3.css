@@ -1,0 +1,416 @@
+ /* body {
+    background : black;
+}  */
+
+/*Reseting elements*/
+body, ul, li, h1,h2, a{
+    margin : 0;
+    padding : 0;
+    font-family : arial;
+}
+header{
+     position : static; /*Nothing will happen with this property*/
+}
+
+
+/*the Sage Academy moved above the image and it left space from where it was(original position) */
+/* header{
+    position : relative; 
+    left : 200px;
+    top : 100px;
+
+} */
+
+/* To use Absolute we need to position the parent first before positioning the child relative to the parent
+Absolute property to work for child element relative to the parent we need the to position the parent first without using static property
+ - Using Absolute property the parent element must be positioned first and not by using Static property 
+*/
+.banner{
+    position : relative;
+}
+
+/*We are going to position the welcome message(child) into the banner class(parent aka image) which we need to use absolute property*/
+
+.banner img{
+    max-width : 100%;
+}
+
+/*The banner is the parent of the welcome section so now we need to position it relative to parent hence 
+calling parent class "banner" first then follows child class "welcome"*/
+
+.banner .welcome{
+    /* background-color : rgb(101, 106, 110); */
+    background-color : #c8a582;
+    color : white;
+    padding : 30px;
+    position : absolute;
+    /* left : 0px;
+    top : 200px; */
+
+    left : 0%;
+    top : 30%; /*Now its 50% from the top of the parent element*/
+
+}
+/* - Pay attention with position of "Relative", when we use it the element will be positioned relative to its original position and the will be a space of that original position(the space is retained)
+    - But with "Absolute", The element is totally removed from normal document flow on the page layout and it will float relative to its parent element, meaning the space of the original position will be removed(the space is not retained), that spaced is replaced by the rest of the content below it
+
+  -> As we used pixels to move the child element relative to its parent, we will have a problem when we reduce the window as pixels are fixed not fluid
+     so we will need to use fluid instead of fixed size, the fluid size is percentage instead of pixels
+*/
+.banner h2{
+    font-size : 50px;
+}
+
+.banner h2 span{
+    font-size : 1.4em; /*When we apply this font six=ze the thing that is happening is that the browser will multiply 70px with 2.0cm for that span thus making it bigger*/
+}
+
+/*Using "Fixed" property 
+ -> Fixed property is mostly used with navigation bar, why?  so that we dont loose the nav bar when we scroll down 
+    since it  fixes the nav bar relative to vipo of the browser
+*/
+
+header {
+    background-color : rgb(101, 106, 110);
+    padding : 20px;
+    text-align : center;
+    position : fixed;
+    width : 100%; /*With the code that ends here our navigation bar is behind the image we need in front of the image, so for us to accomplish that we need to use the "z-index" to bring it forward thus removing it from the back*/
+    z-index : 1;/* z-index  by default is 0, then z-index > 0 will bring an element forward and z-index <= 0 will put the element behind in this case the navigation bar*/
+    top : 0px;
+    left : 0px;
+
+}
+
+header h1 {
+    display : inline-block;
+    color : black;
+    border : 8px solid black;
+    padding : 6px 12px; /*6px top and bottom, 12px left and right */
+    border-radius : 20px;
+}/*
+    -> Now pay attention to the element, since its a block element the border will the full width of the page, so we want it to take the only text size lets convert it to inline-block
+    -> border radius a property that gives us a curved corners of the border
+*/
+
+
+/*STICKY VALUE*/
+/*sticky value is my favourite value
+ -> What it does is, the element will be placed on the documentation layout like nav bar list and will be static then as we scroll down the nav bar list will move but once nav bar it reaches the top of the webpage the nav bar list becomes fixed
+    then we scroll up it goes back to its original position
+*/
+
+nav{
+    background-color : #f4f4f4;
+    padding : 20px;
+    position : sticky;
+    top : 105px; /*We need top for "Sticky value" to take place, what it clearly means is if the nav bar reaches 105 from the top, the nav bar must stop moving with layout and become fixed.*/
+}
+nav li{
+    /* width : 25%; */
+    width : 20%;
+    text-align : center;
+    display : inline-block;
+    font-size : 20px
+}/*With only this code the last url is in the next line which we dont want to look like that, meaning on the white space the is a wrap which we dont want 
+  How can we combact that we can go to the parent list which is "ul" in this case then the "white-space" we turn it to "nowrap" so that all url can be on the same line*/
+nav ul{
+    white-space : nowrap; /*What it does is it prevents wrapping to the next line everything must be on the same line*/
+    max-width : 1200px;
+    margin : 0 auto; /*0 top and bottom, auto left and right,  so waht auto does is on the left and right if there is any space left over on both left and right apply it on both sides(1200px / 0) 
+    auto keyword it works itself out*/
+}
+
+nav li a {
+    text-decoration : none;
+    color : #4b4b4b;
+
+}
+/* 
+nav li a.join{
+    color :  rgb(209, 41, 41);
+} */
+
+
+/*Applying more styles for proper website*/
+/*
+apply more styles
+ -> reseting default browser settings for some elements
+ ->reseting some of properties
+*/
+
+main.main1{
+    max-width : 100%; /*The maximum width that will be used up according to browser vipo why? to prevent the elment from  going off the page if the given width exclusively is bigger than vipo 
+      -> meaning if we give it width of 1200px and our vipo is 800px the browser can fit it into that vipo without problems and take only the amount the vipo can accormodate without any problems 
+      -> */
+    width : 1200px; /**/
+    margin :  80px auto; /*80px top and bottom, auto left and right 
+                            -> Basically wats happening with auto is the column will be distributed 1200px looking at given width inside vipo and the remaining space will be distributed equally on the left and right side
+                            */
+    padding : 0 40px;
+    box-sizing : border-box; /*The purpose of box sizing is to make our vipo accomodate our paragraph when we resize our browser window so that it does not get over shadowed by vipo
+                               -> What this does is, when we add padding to max-width it combines them to be one, like saying add padding to max-width and make them one
+                                   -> Dont add padding separately on its own on the element but combine it with max-width to avoid an element that will be overshadowed by vipo when we resize the window 
+                                      it improves and element that will be fluid in the box, when we resize the vipo it adjust with it
+                                -> It means dont adding the padding on top, the max-width can be 100% including padding  */
+
+}
+
+article h2{
+    color : rgb(29, 28, 28);
+    font-size : 40px;
+} 
+
+article p {
+    line-height : 2em; /*line height it basically determines the space between lines
+    
+    */
+    color : #4b4b4b;
+}
+
+.images{
+    text-align : center;
+    margin : 80px 0;
+    white-space : nowrap; /*Prevents implementation of new line for our elements, thus making them to be on the same line*/
+}
+.images li{
+    display : inline-block;
+    width : 40%; /*We have 40% width for each li*/
+    margin : 20px 5%; /*Adding margin between this two li tags*/
+}
+.images li img{
+    max-width : 100%; /*The total amount of width it will take in vipo and be able to accomodate,It will take 100% of its parent container which is 40% --> meaning it will take the total amount the total amount of given width
+                        -> if max-width was 90% then the image was gonna take 90% of given width of 40% which is around 32%
+                        -> we used max-width of image to prevent images for taking default value of full size of image, thus it will be contained with exclusive width of 100% of width of 40%(parent container width)
+                        */
+
+}
+section.joine{
+    background : #f4f4f4;
+    text-align : center;
+    padding : 60px 20px;
+    color : #4b4b4b;
+
+}
+section.joine h2{
+    font-size : 36px;
+}
+form input{
+    margin : 20px 0;
+    padding : 10px 20px;
+    font-size : 24px;
+    border-radius : 28px;
+    border : 4px solid white;
+}
+
+footer{
+    background-color : rgb(101, 106, 110);
+    color : black;
+    padding : 10px;
+    text-align : center;
+}
+
+/*Pseudo classes*/
+/*
+    - Style elements when they're in a particular state 
+        -> Types of pseudo classes 
+           -> :hover 
+           -> :valid
+           -> :focus
+           -> :first child
+           -> etc
+*/
+/* 
+nav li:hover{
+    text-decoration : underline;
+} */
+/* :hover pseudo class*/
+/* nav li a:hover{
+    text-decoration : underline;
+    } */
+.images li:hover{
+    position : relative; /*We are using position to nudge up our images a few pixels*/
+    top : -10px; /*Instead of going down it will go up with -4px*/
+}
+
+/* :focus pseudo class
+    -> 
+*/
+
+form input:focus{
+    border : 4px dashed #4b4b4b;
+    outline : none; /*control border outline*/
+}
+/*Focus means when the user is using the particular element at that time*/
+
+/*valid pseudo class
+    -> Well we know that html5 validate our email by default when we request it from the user 
+       - so now we will do it exclusively with the "valid pseudo class" so that the user can see for themselves that the entered email is valid by our chosen color green
+
+*/
+form input:valid{
+    border : 4px  solid greenyellow;/*Our form input will turn green when the given input is valid*/
+}
+
+/*first child pseudo class*/
+
+/*nav li:first-child{
+    border : 4px solid crimson;
+}Not a good / nice psudo class to use as a style*/
+
+
+/*Pseudo elements*/
+/*
+    ->pseudo elements allows us to inject dynamic content
+      - p::after --> insert content after every <p> element 
+      - p::first-letter --> selects the first of every <p> element
+      - p::selection --> selects the portion of an element that is selected by a user
+*/
+
+article p::first-line{
+    font-weight : bold;
+    font-size: 1.2em;
+}
+section.joine p::first-letter{
+    font-size : 1.2em;
+}
+
+/* section.joine p::selection{
+    background-color : skyblue;
+    color : white;
+} */
+p::selection{
+    background-color :skyblue;
+    color : white;
+}
+
+p::after{
+    content : '...'
+}
+
+/*Responsive Design*/
+
+/*Media Queries 
+    -> Tell the browser how to style an element at particular viewpoirt(vipo/vpo) dimensions
+        - e.g desktop dimensions or mobile dimensions
+    -> They allow us to target elements on webpage to style them with different viewport with to accomordate different devices 
+    -> Media query changes the layout of website for different devices browser viewport 
+
+viewport meta tag
+    -> Tells the browser what width the viewport should be
+    -> The viewport is descriptive about our website, meaning it tell the browser something about our website 
+       either to be viewed in desktop or mobile, but it does not tell the browser about wats inside website  
+    ->  The viewport meta tag tells the browser what viewport the browser should be depending to the device visiting the website
+    -> Without viewport meta tag the media query will not work
+
+Responsive images 
+    -> Only load smaller images for mobile devices
+*/
+/*When creating websites we must have clear strategy were by we start designing for mobiles first before we go to desktop
+    -Why? some features will be omitted for mobile compared to desktop design.*/
+
+
+ @media screen and (max-width : 1400px)/*Looking at max-width everything properties declared in this query they the will apply to all devices with viewport max-width of 1400px or less, anything above this viewport 
+                                        the declared properties wont apply */
+ {
+    .banner .welcome h2{
+        font-size : 60px;
+    }/*We dont need to write those styles above from this rule set as they will be applied, unless if we want to override those styles(properties) in media query */
+   nav li{
+        font-size : 18px;
+   }
+}
+
+ /* @media screen and (min-width : 800px)
+ {} 
+    -> min-width simply means the declared properties in this media query they must apply to a viewport of 800px and above
+    -> viewport of less 800px this declared properties they will not apply to that particular viewport 
+    -> for this properties to apply the minimum width required for device browser viewport is 800px
+
+
+ */
+
+ @media screen and (max-width : 960px)
+ {
+    .banner .welcome h2{
+        font-size : 40px;
+       
+    
+    }/*We dont need to write those styles above from this rule set as they will be applied, unless if we want to override those styles(properties) in media query */
+    
+}
+
+@media screen and (max-width : 700px)
+{
+   .banner .welcome{
+     
+       position : relative;
+       text-align : center;
+       padding : 10px;
+       
+       
+   
+   }/*We dont need to write those styles above from this rule set as they will be applied, unless if we want to override those styles(properties) in media query */
+   .banner .welcome br{
+       display : none;
+   }
+
+   .banner .welcome h2{
+    font-size : 25px;
+    }
+    .banner .welcome span{
+        font-size : 1em;
+    }
+   /* nav li{
+   display : block;
+       font-size : 14px;
+  } */
+  .images li{
+    width : 100%;
+    margin : 20px auto;/*Auto means apply margin if there is a space left*/
+    display : block;
+  }
+}
+
+@media screen and (max-width : 560px)
+{
+  
+    nav li{
+        display : block;
+        font-size : 14px;
+        width : 100%;
+        margin : 12px 0;
+   
+   }
+   header{
+    position : relative;
+   }
+
+   nav{
+    top : 0;
+   }
+}
+
+
+
+
+nav li a {
+    position : relative;
+    display : inline-block;
+}
+nav li a::after{
+    content : "";
+    position : absolute;
+    left : 0;
+    bottom : -6px;
+    width : 100%;
+    height : 3px;
+    background : black;
+    border-radius : 40px;
+    transform : scaleX(0);
+    transition : transform .2s;
+}
+
+nav li a:hover::after{
+    transform : scaleX(1)
+}

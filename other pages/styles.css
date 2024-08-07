@@ -1,0 +1,74 @@
+h3{
+    color : Orange;
+    font-size : 35px;
+}
+
+p{
+    color : slategray;
+    font-size : 18px;
+    /*line-height: 30px  it is used to give space between lines of a particular selector
+    letter-spacing : 10px  used to give letters space in between
+    coumn-count : 3 splitting the paragraph into 3 columns
+    column-gap : 40px used to give gap between columns we have created*/
+}
+div{
+
+ background-color : black;
+
+}
+
+h1{
+    color : red;
+    font-size : 50px;
+    text-align : center;
+}
+
+li{
+
+    color : slategray;
+    font-size : 18px;
+    /*to set border we need to properties which are border-width and border-style*/
+    /*border-width : 30px;
+      border-style : solid;
+      border-color : crimson
+      
+      OR
+
+      border: 4px solid crimson 
+      
+      OR
+
+      border-bottom: 4px dotted crimson;
+      border-left: 4px dashed crimson;
+      border-top: 4px solid crimson;
+      border-right: 4px dashed crimson;
+
+      dashed means => dashed lines
+      */
+    
+  /* font-family: arial ------use web safe fonts(check w3schools), fonts that everyone can use;
+     font-decoration : underline*/
+
+     list-style-type : square;
+     text-shadow: 2px 2px lightgray
+     /*first 2pixel is for horizantal shadow from right to left 
+       second 2pixel is for vertical shadow from top to down 
+       */
+}
+
+/*rule set -- is the combination of a selector and declarations
+  */
+
+  /*Hexa codes----for colors
+  R     G     B
+  42    f4    f1
+  
+     42f4f1
+     
+     0 - represents the darkest shade
+     f - represents the brightest shade or most vivid shade
+     
+     all 0 is black
+     all f is white*/
+
+     /**/

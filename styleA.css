@@ -1,0 +1,165 @@
+*{
+    margin : 0;
+    padding : 0;
+    font-family : arial;
+}
+
+body{
+    min-height : 100vh;
+}
+/* main{
+    min-height : 100%;
+    z-index : -1;
+    background-color : black;
+
+} */
+
+/*Header working*/
+header.header1 {
+    background-color : rgb(101, 106, 110);
+    padding : 20px;
+    text-align : center;
+    position : fixed;
+    width : 100%;
+                 /*With the code that ends here our navigation bar is behind the image we need in front of the image, so for us to accomplish that we need to use the "z-index" to bring it forward thus removing it from the back*/
+     z-index : 1;/* z-index  by default is 0, then z-index > 0 will bring an element forward and z-index <= 0 will put the element behind in this case the navigation bar*/
+     top : 0px;
+     left : 0px;
+
+}
+.header1 h1 {
+    display : inline-block;
+    color : black;
+    border : 8px solid black;
+    padding : 6px 12px; /*6px top and bottom, 12px left and right */
+    border-radius : 20px;
+}
+
+/*navigation working*/
+nav.nav1{
+    
+    background-color : #f4f4f4;
+    padding : 20px;
+    position : sticky;
+    z-index : 1; /*brought my nav forward from behind header*/
+    top : 100px;
+    /* border-radius :20px; */
+      
+}
+nav.nav1 li{
+    display : inline-block;
+    /* width : 25%; */
+    width : 20%;
+    font-size : 20px;
+    top : 100px;
+    /* text-align : center; */
+}
+.nav1 ul{
+    white-space : nowrap;
+    max-width : 1200px;
+    margin :0  auto;
+    
+}
+nav.nav1 li a {
+    text-decoration : none;
+    color : #4b4b4b;
+
+}
+.image{
+
+    background : url("images//academics12.jpg") no-repeat;
+    background-size : cover;
+    background-position : center;
+
+    padding: 300px;
+    position : relative;
+    top : 102px;
+    color : white;
+    text-align : center;
+    font-size : 50PX;
+    font-weight : 500px;
+}
+.s0{
+    padding-bottom : 100px;
+}
+.article{
+    padding-bottom : 500px; /*Article element is not the one overlapping its, but the main it one overlapping */
+    /* background-color : blue; */
+    z-index : -1;
+   
+}
+.article .div1{
+    width : 1450px;
+    margin : 0 auto;
+    background-color : white;
+}
+/*about us working*/
+ .article .s1 .p1{
+    width : 90%;
+    margin : 0 auto;
+    background-color : #f4f4f4;
+    
+  
+} 
+
+.article .s1 h2{
+    text-align : center;
+    padding : 50px;
+    font-size : 50px;
+    font-weight : 500;
+}
+
+.p1 {
+   display : flex;
+    justify-content : space-between;
+    padding : 30px;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);
+}
+.span1{
+    font-size : 20px;
+    padding : 30px;
+    color : #4b4b4b;
+}
+.divX{
+    width : 1355px;
+    margin : 0 80px;
+    display : flex;
+    justify-content : center;
+}
+
+.div2{
+    padding-top : 50px;
+}
+.s2{
+    width : 93%;
+    padding-bottom : 0px;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);
+}
+.div22{
+    text-align : center;
+    padding : 40px;
+    background-color : #f4f4f4;
+}
+.div22 h2{
+    font-size : 30px;
+}
+.div22 .p2{
+    padding : 20px;
+    color : #4b4b4b;
+    font-size : 18px
+}
+.div2{
+    display : flex;    
+   
+}
+footer{
+    /* position : relative; */
+    display : block;
+    background-color : rgb(101, 106, 110);
+    color : black;
+    padding : 20px;
+    text-align : center;
+    margin-top : auto;
+    clear : both;
+    z-index : 1;
+}

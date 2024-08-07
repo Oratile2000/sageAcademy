@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <title>ACADEMY</title>
+</head>
+<body>
+<div>
+    <h1 style="color:rgb(38, 42, 44)"><b> SAGE ACADEMY</b></h1>
+    <a href="index.html">HOME</a>
+    <a href="">SIGNUP</a>
+    <a href="about us.html">ABOUT</a>
+    <a href="contact.html">CONTACT</a>
+   
+</div>
+
+<main></main>
+    <!-- <form action = "">    action tell the browser wat to do when we submit the form (its an attribte used for php and server side ) -->
+   <form>
+    <label for="firstname">First name :</label>
+    <input type="text" id="firstname" name="firstname" required> <!--The "id" attribute must be unique for each page and the id attribute can be added to any tag-->
+    <br><br>                                <!--(For backend)The id attribute can be used as the hook by css or javascript to implement something on that id-->
+    <label for="lastname">Last name :</label>
+    <input type="text" id="lastname" name="lastname" required>
+    <br><br> <!--(For backend)The "name" attribute is used by server side or php to get the value from that particular input field its like a link for retrivieng data from user to server side -->
+    <label for="email">Email :</label> <!--"name attribute" is also used to group different parts of HTML forms together like radio buttons...very important for grouping different input fields-->
+    <input type="email" id="email" name="email" required>
+      <br><br>
+     
+     <!--Radio buttons-->
+        <p>Choose gender</p>
+         <input type="radio" id="option-1" name="gender" value="male"  required>
+         <label for="option-1">Male</label> <br> <!--radio buttons-->
+         <input type="radio" id="option-2" name="gender" value="female" required>
+         <label for="option-2">Female</label> <br><!--Value attribute will be readed by server side(backend) to know which radio button user clicked and that value will be send to server when the form is submitted-->
+         <input type="radio" id="option-3" name="gender" value="other" required>
+         <label for="option-3">Other</label> <br><br> 
+
+    
+     <label for="province">Province :</label>
+      <input type="text" id="province" name="province" required>
+      <br><br>
+      <label for="city/town">Town/City :</label>
+      <input type="text" id="city/town" name="city/town">
+      <br><br>
+      <label for="suburb">Suburb :</label>
+      <input type="text" id="suburb" name="suburb" required>
+      <br><br>
+      
+       <label for="password">Password :</label>  <!--html is case sensitive everythin thats need to be matched must be exactly the same like values of attributes '(FOR) in label' and "(id) in input"-->
+       <input type="password" id="password" name="password" required>
+       <br><br>
+       <label for="cpassword">Confirm password :</label>
+       <input type="password" id="cpassword" name="cpassword">
+       <br><br>
+
+       <label for="question">Security question :</label>
+       <Select name="question" id="question" required>   <!--'Select tag' known as select box also known as dropdown used to select a particular value from various values in this question is security questions-->
+            <option value="q1">What color is your Bugatti?</option>
+            <option value="q2">Whats your parent name?</option>
+            <option value="q3">Whats your dog name?</option>
+            <br><br>
+       </Select>
+       <br><br>
+       <label for="answer">Security answer :</label>
+       <input type="text" id="answer" name="answer" required>
+       <br><br>
+       <label for="bio">Your bio :</label>
+       <br>
+       <textarea name="bio" id="bio" col="30" row="10" placeholder="About you..."></textarea>   <!--comment tag section, cannot 
+        use input tag because we might have large comment bigger tha input thus
+    comment tag is most useful in this case for clear view unlike input tag
+    comment tag its not just for commenting but for other things that require 
+    multiple lines of text which is <textarea id="" name="" col="" row="" placeholder=""> tag-->
+         <br><br>
+        <input type="submit" value="SIGN UP">
+   </form>
+  <!--The attribute  "Required" is used to force us to fill in the required 
+    value on a particular element-->
+    <!--What happens when we submit the form by sign up the browser take the value inside the action attribute as reference to the server for the particular form submited-->
+
+
+ <P>Aleardy have an account? <a href="login.html"> SIGN IN</a></P>
+
+</div>
+
+</body>
+</html>
+<!--Style sheet can be added anywhere in the HTML form but best on the head tag-->
+

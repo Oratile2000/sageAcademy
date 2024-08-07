@@ -1,0 +1,91 @@
+<!--SEMANTIC TAGS - Tags that structure our website in a well structured order for meaningful insights
+
+    -> HTML semantics aims to makes our code more meaningful by telling the browser what that content we inserted is.
+    
+    TYPES OF SEMANTICS
+     -> <main>
+          - For the main content of a webpage which is unique to that page 
+          - contains content that is unique to that webpage and cannot be found in other pages 
+          e.g Not the navigation bar but the content of home page etc
+     -> <section>
+          - Defines a certain section of a webpage(e.g blog list, contact info)
+          - We can have several different sections on a webpage
+          - each section have its own meaning in a webpage
+     -> <article> 
+         - Defines a bit of content which makes up an article(e.g a blog post) 
+     -> <aside>
+         - Defines some content related to something else(e.g similar blogs)
+     -> <header>
+         - For the header of a website - contains the nav, title etc
+     -> <Footer>
+         - <footer>
+         - for the footer of a website
+         - the section of a content at the very bottom of a web page 
+           - this section contains :
+              - logo
+              - sitemap
+              - contact information
+              - link to privacy policy
+              - social media icons
+              - email-sign up form 
+     -> There is more semantics          
+-->
+<!DOCTYPE html>
+<html>
+<head>
+   <!-- <link rel = "stylesheet" href= "style3.css"> --> 
+ <title>SAGE ACADEMY</title>
+</head>
+<body>
+
+    <header>
+        <h1 style = "color : crimson">SAGE ACADEMY</h1>
+    </header>
+
+    <section class = "banner">
+        <img src = "images//academics4.jpg"  alt ="invest in your education">
+        <div class = "welcome">
+            <h2>Welcome to <br><span>Sage Academy</span></h2>
+        </div>
+    </section>
+
+    <nav class = "main-nav" >
+        <ul>
+            <li><a href = "index.html" class = "join">Join the academy</a></li>
+           <li><a href = "Login.html" >Login</a></li>
+           <li><a href = "Signup.html" >Sign up</a></li>
+           <li><a href = "Contact.html" >Contact</a></li>
+            
+    </nav>
+    <main>
+        <article>
+            <h2>Your favourite academy, The sage academy</h2>
+            <p>we all knows knowledge allows individuals to make informed decisions, understand complex concepts, and solve problems. It can also lead to personal growth and career advancement.
+          <br> For societies, knowledge can drive progress and innovation, improve living standards, and promote social and economic development. As Franklin said knowledge is an asset that can <br>
+               never be taken away and can positively impact an individual's life in various ways and there is a qoute that says "An expect is a man who knows just that much more about his subject<br>
+               than his associates. Most of us are nearer the top than we think. We fail to realize how easy it is, how necessary it is to learn that fraction more". Knowledge is the eye of desire <br>
+               and can become the pilot of the soul, invest in knowledge with us the sage academy with good quality of education you shall be the best.</p>
+        </article>
+    <!--Putting an image in <li> tag-->
+    <ul class = "image">
+        <li><img src = "images//academics5.jpg"  alt = "academy1"></li>
+        <li><img src = "images//academics6.png"  alt = "academy2"></li>
+
+    </ul>
+ </main>
+<!--Following is the little section for form before the footer for user to join mailing list-->
+ <section class = "join">
+    <h2>Join Today!</h2>
+    <p>Knowledge is the eye of desire and can become the pilot of the soul, <br>
+       invest in knowledge with us the sage academy with good quality of education you shall be the best
+    </p>
+
+    <form>
+        <input type = "email" name = "email" placeholder = "Type email & hit enter" required> <!--Sometimes we dont need the submit button, you fill in your details then press enter then it will submit without the use of submit button-->
+    </form>
+ </section>
+ <footer>
+    <p class = "copyright">Copyright 2023 Sage Academy</p>
+ </footer>
+</body>
+</html>

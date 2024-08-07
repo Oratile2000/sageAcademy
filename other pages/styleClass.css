@@ -1,0 +1,184 @@
+/*ClASSES AND SELECTORS*/
+
+/*Classes -  is an attribute that enable us to style a particular selector/selectors represented by a particular class*/
+
+ /*
+h3.Emmza{ /*Styling using the class alone, this will affect all selectors with class attribute Emmza
+    color : crimson;
+}*/
+/*This style took effect because specifying selector with class for styling have more weight than specifying only class*/
+
+
+
+/*
+.Emmza{        /*Styling using the selector and class this method will only affect all the h3 selectors with class Emmza
+ color : green;
+
+}*/
+/*this class will affect all selectors of h3 that has class Emmza no matter if they have two classes or more for one h3 selector as long class Emmza is available */
+
+
+/*
+h3.Emmza.Ora{
+    color : blue;
+}This styling will only affect selectors with classes Emmza and Ora no matter if they have other more classes minimum required class for this h3 selector to be
+   affected we need minimum of this two classes "Emmza & Ora"*/
+
+/* 
+h3.Emmza.Ora{
+    color : pink;
+}BOTH "h3.Emmza.Ora" have same weight and css is procedural latest styling will be executed */
+
+
+
+
+/* USING ID'S  instead of classes*/
+/*All ID's must be unique in a page cannot be repeated*/
+/*ID's are more useful with javascript*/
+
+
+/*Syntax
+
+#id name :
+#oratile
+*/
+ 
+/*
+#oratile{
+  transform-style : uppercase;
+  color : orange;
+
+}
+
+h2#oratile{
+    color : purple;
+    padding : 20px
+} */
+
+
+
+/*DESCEDENT SELECTORS*/
+/*
+Descendent selectors - is another type of styling that work with parents and children like inheritance
+  - styling a child selector with parent selector identified has more weight than styling a child selector alone when compared 
+
+  - Parent selector is a selector that encloses nested selectors like div enclosing h1,h2,h3,p etc
+        - div here is a parent selector 
+        - h1,h2,h3,p are child selectors
+    -So applying a style on parent selector will also affect child classes autometically, but some styles dont apply to child selectors 
+     when applied to parent selectors like borders, margins, padding 
+        - If we want child selectors to inherit those styles, we must do them explicitly as they cannot be done autometically 
+        -  
+
+    SYNTAX 
+
+    parent child selector{}
+*/
+
+div{
+    color : royalblue;
+    
+}
+
+
+div .Emmza{
+     color : crimson;
+    
+
+}/*This basically means go into parent selector and look for a any selector with class Emmza*/
+/* div.Emmza{}  --- this means look for div with class emmza */
+
+div h2{
+    color : purple;
+}
+
+div h3{
+    color : purple;
+}
+
+div h3.Emmza{
+    color :green;
+}
+
+
+/*ATTRIBUTE SELECTORS*/
+/*Styling using attribute names
+
+Syntax:
+
+selector[attribute]{
+
+}
+*/
+a[href]{
+    background-color : orange;
+
+} /*This means for every anchi tag with attribute href, apply properties declared inside this set rule*/
+
+a[href = "Login.html"]{
+    background-color : green;
+    color : white;
+    text-decoration : none;
+    font-weight : bold;
+    text-transform : uppercase;
+
+} /*This means for every anchi tag with attribute href = "Login.html" , apply properties declared inside this set rule
+       - This one got more weight than href only*/
+
+/*Using the "$" -- "$=" means it ends with particular attribute value*/
+/*Using "*" --> "*=" means it contains a specific value of attribute specified
+
+*/
+a[href*= "signup"]{
+    background-color : green;
+    color : white;
+    text-decoration : none;
+    font-weight : bold;
+    text-transform : uppercase;
+
+}
+
+/*for $*/
+a[href$= "html"]{
+    background-color : green;
+    color : white;
+    text-decoration : none;
+    font-weight : bold;
+    text-transform : uppercase;
+    border : 2px solid blue;
+
+}/*This is very useful when u want to add image or an icon to the right of pdf or whatsapp*/
+
+
+
+/*CASCADE*/
+/*Cascade means to pour downwards, from top to buttom
+    - css is taking on cascade further
+    - CSS is like flowing down from parents to children 
+
+ INHERITANCE
+
+   -HTML elements can inherit CSS properties that are applied to their parents 
+     like parent and children
+        --> Having div as a parent and span, h1,h2,p  as children
+           --> Applying styling on div will autometically affect children by default for properties that can be inherited autometically 
+               others we must apply their styling them explicitly to apply on children 
+               ---> SOME PROPERTIES CANNOT BE INHERITED LIKE MARGIN, BORDERS, PADDING
+*/
+
+div{
+ color : crimson;
+ border : 4px solid  black;
+
+} /*Notice border only affects parent not children*/
+
+h3{
+    border : inherit;
+    margin : inherit;
+    color : blue;  /*This color is applied to the child selector to override the one that is applied to the parent, this one is specific and if its specific it got more weight */
+}
+/*h3 will inherit from its parent if it exist, which it does exist "div"
+--If there was no parent for h3 the inheritance was not gonna work because there is no parent to inherit from
+*/
+
+
